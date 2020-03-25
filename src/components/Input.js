@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { Helmet } from "react-helmet";
 import AutosizeInput from "react-input-autosize";
 import localStorage from "../localStorage";
 
@@ -37,8 +38,6 @@ const useStyles = makeStyles({
 const Input = () => {
   const [name, setName] = useState("Untitled Document");
   const classes = useStyles();
-  const nameWidth = (name.length + 1) * 8.8 + "px";
-  const spacerSty = { width: nameWidth };
 
   useEffect(() => {
     const getDocumentName = async () => {
@@ -55,15 +54,20 @@ const Input = () => {
   }, []);
 
   return (
-    <AutosizeInput
-      name="document-name"
-      value={name}
-      className={classes.root}
-      onChange={e => {
-        setName(e.target.value);
-        localStorage().setItem("documentName", e.target.value);
-      }}
-    />
+    <>
+      <Helmet>
+        <title>{name}</title>
+      </Helmet>
+      <AutosizeInput
+        name="document-name"
+        value={name}
+        className={classes.root}
+        onChange={e => {
+          setName(e.target.value);
+          localStorage().setItem("documentName", e.target.value);
+        }}
+      />
+    </>
   );
 };
 
