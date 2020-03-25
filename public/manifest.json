@@ -8,14 +8,9 @@
       "type": "image/x-icon"
     },
     {
-      "src": "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico",
+      "src": "https://www.gstatic.com/images/branding/product/1x/docs_48dp.png",
       "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "96x96"
     }
   ],
   "start_url": ".",
