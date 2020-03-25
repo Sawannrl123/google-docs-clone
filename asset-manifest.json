@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/google-docs-clone/static/css/main.10423165.chunk.css",
+    "main.js": "/google-docs-clone/static/js/main.fdc3b1d0.chunk.js",
+    "main.js.map": "/google-docs-clone/static/js/main.fdc3b1d0.chunk.js.map",
+    "runtime-main.js": "/google-docs-clone/static/js/runtime-main.e8883142.js",
+    "runtime-main.js.map": "/google-docs-clone/static/js/runtime-main.e8883142.js.map",
+    "static/js/2.47999e65.chunk.js": "/google-docs-clone/static/js/2.47999e65.chunk.js",
+    "static/js/2.47999e65.chunk.js.map": "/google-docs-clone/static/js/2.47999e65.chunk.js.map",
+    "index.html": "/google-docs-clone/index.html",
+    "precache-manifest.ffc6d03f6c5347bc06858830b0469795.js": "/google-docs-clone/precache-manifest.ffc6d03f6c5347bc06858830b0469795.js",
+    "service-worker.js": "/google-docs-clone/service-worker.js",
+    "static/css/main.10423165.chunk.css.map": "/google-docs-clone/static/css/main.10423165.chunk.css.map",
+    "static/js/2.47999e65.chunk.js.LICENSE.txt": "/google-docs-clone/static/js/2.47999e65.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e8883142.js",
+    "static/js/2.47999e65.chunk.js",
+    "static/css/main.10423165.chunk.css",
+    "static/js/main.fdc3b1d0.chunk.js"
+  ]
+}
