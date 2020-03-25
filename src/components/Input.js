@@ -56,7 +56,7 @@ const Input = () => {
   return (
     <>
       <Helmet>
-        <title>{name}</title>
+        <title>{`${name} - Google Docs`}</title>
       </Helmet>
       <AutosizeInput
         name="document-name"
