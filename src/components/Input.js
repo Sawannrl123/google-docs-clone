@@ -6,11 +6,14 @@ import localStorage from "../localStorage";
 
 const useStyles = makeStyles({
   root: {
+    position: "relative",
+    zIndex: 2,
     "& input": {
       color: "#000",
       fontSize: "18px",
       fontVariantLigatures: "no-contextual",
       height: "20px",
+      fontWeight: 500,
       lineHeight: "22px",
       minWidth: "1px",
       visibility: "visible",
@@ -35,7 +38,7 @@ const useStyles = makeStyles({
   }
 });
 
-const Input = () => {
+const Input = props => {
   const [name, setName] = useState("Untitled Document");
   const classes = useStyles();
 
@@ -62,6 +65,7 @@ const Input = () => {
         name="document-name"
         value={name}
         className={classes.root}
+        {...props}
         onChange={e => {
           setName(e.target.value);
           localStorage().setItem("documentName", e.target.value);

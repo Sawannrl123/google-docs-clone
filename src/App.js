@@ -1,12 +1,12 @@
 import React from "react";
-import { Editor, BookMark, Input } from "./components/index";
+import { Editor, DocumentSetting, Loader } from "./components/index";
 
 const App = () => {
   return (
     <div>
-      <BookMark />
-      <Input />
+      <DocumentSetting />
       <Editor />
+      <Loader />
     </div>
   );
 };

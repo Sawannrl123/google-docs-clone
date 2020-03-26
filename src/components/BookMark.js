@@ -1,9 +1,24 @@
 import React, { useEffect, useState } from "react";
-import Rating from "@material-ui/lab/Rating";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import StarIcon from "@material-ui/icons/Star";
+import StarBorderIcon from "@material-ui/icons/StarBorder";
 import localStorage from "../localStorage";
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    minWidth: "auto",
+    padding: 4,
+    color: props => (props.bookMark ? "#F4B400" : "#5f6368")
+  },
+  icon: {
+    fontSize: 18
+  }
+}));
 
 const BookMark = () => {
   const [bookMark, setBookMark] = useState(0);
+  const classes = useStyles({ bookMark });
 
   useEffect(() => {
     const getRating = async () => {
@@ -19,16 +34,20 @@ const BookMark = () => {
   }, []);
 
   return (
-    <Rating
-      name="size-small"
-      value={bookMark}
-      size="small"
-      max={1}
-      onChange={(event, newValue) => {
-        setBookMark(newValue);
-        localStorage().setItem("documentBookMark", newValue);
+    <Button
+      aria-label="Bookmark"
+      onClick={() => {
+        setBookMark(!bookMark);
+        localStorage().setItem("documentBookMark", !bookMark);
       }}
-    />
+      className={classes.root}
+    >
+      {bookMark ? (
+        <StarIcon className={classes.icon} />
+      ) : (
+        <StarBorderIcon className={classes.icon} />
+      )}
+    </Button>
   );
 };
 

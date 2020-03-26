@@ -24,6 +24,7 @@ class EditorComponent extends React.Component {
     this.setState({ content });
     if (this.localStorage) {
       this.localStorage.setItem("documentContent", content);
+      this.localStorage.setItem("savedAt", new Date().getTime());
     } else {
       console.log("Sorry! No Web Storage support..");
     }

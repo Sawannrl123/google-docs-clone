@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+img {
+  max-width: 100%;
+}
+
 .google-docs .tox .tox-sidebar-wrap {
   background-color: #f8f9fa;
 }
@@ -22,6 +26,37 @@ code {
   box-shadow: rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-.google-docs .tox-tinymce {
+.google-docs .tox.tox-tinymce {
   border: 0;
+  position: relative;
+  top: -33px;
+}
+
+.google-docs .tox .tox-menubar {
+  padding: 0;
+  margin-left: 63px;
+  display: inline-flex;
+}
+
+.google-docs .tox .tox-toolbar-overlord {
+  position: relative;
+  z-index: 1;
+}
+
+.google-docs .tox .tox-mbtn {
+  height: 25px;
+  cursor: pointer;
+}
+
+.google-docs .tox .tox-mbtn:hover:not(:disabled):not(.tox-mbtn--active) {
+  background-color: rgb(241, 243, 244);
+}
+.google-docs .tox .tox-mbtn--active,
+.google-docs .tox .tox-mbtn:focus:not(:disabled) {
+  background-color: rgb(232, 240, 254);
+}
+
+.google-docs .tox .tox-mbtn__select-label {
+  font-weight: 500;
+  cursor: pointer;
 }
