@@ -13,7 +13,7 @@ import {
   MenuList,
   ClickAwayListener
 } from "@material-ui/core";
-import { Input, BookMark, SavedAt } from "../components";
+import { Input, BookMark, SavedAt, HeadingRightSection } from "../components";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -66,6 +66,20 @@ const useStyles = makeStyles(() => ({
   },
   specialIcon: {
     fontSize: 18
+  },
+  vertical: {
+    position: "absolute",
+    zIndex: 10,
+    top: 99,
+    left: 0,
+    right: 0
+  },
+  horizontal: {
+    position: "absolute",
+    zIndex: 9,
+    top: 115,
+    left: 0,
+    height: "calc(100vh - 116px)"
   }
 }));
 
@@ -185,6 +199,16 @@ const DocumentSetting = () => {
   return (
     <>
       <Box className={classes.root}>
+        <img
+          src={process.env.PUBLIC_URL + "/vertical.png"}
+          alt="ruler"
+          className={classes.vertical}
+        />
+        <img
+          src={process.env.PUBLIC_URL + "/hotozontal.png"}
+          alt="ruler"
+          className={classes.horizontal}
+        />
         <Box className={classes.left}>
           <a href="/" className={classes.logo}>
             <img
@@ -207,9 +231,7 @@ const DocumentSetting = () => {
             <Box className={classes.fake}></Box>
           </Box>
         </Box>
-        <Box className={classes.right}>
-          <p>Sawan</p>
-        </Box>
+        <HeadingRightSection />
       </Box>
       <SavedAt />
     </>

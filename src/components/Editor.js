@@ -39,20 +39,106 @@ class EditorComponent extends React.Component {
         initialValue={content}
         apiKey="w53jltrie1h5aeaaaq96rilp17d5kitruhi2whk5g47tyncu"
         init={{
-          height: "100vh",
+          height: "calc(100vh - 31px)",
           branding: false,
           elementpath: false,
           resize: false,
+          toolbar_mode: "scrolling",
           statusbar: false,
           content_css: "index.css?" + new Date().getTime(),
           pagebreak_split_block: true,
+          tinycomments_mode: "embedded",
+          tinycomments_author: "Sawan Nirala",
+          menu: {
+            custom: {
+              title: "Add-ons",
+              items: "dAddons | pDocs | gAddons mAddons"
+            }
+          },
+          menubar: "file edit view insert format tools custom help",
           plugins: [
             "advlist autolink lists link image charmap print preview anchor",
             "searchreplace visualblocks code fullscreen",
-            "insertdatetime media table paste code help wordcount pagebreak"
+            "insertdatetime media table paste code help wordcount pagebreak formatpainter tinymcespellchecker fontselect fontsizeselect imagetools tinycomments"
           ],
           toolbar:
-            "pagebreak | undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help"
+            "undo redo print spellchecker formatpainter | zoom | formatselect | fontselect | fontsizeselect | bold italic underline forecolor backcolor | link showcomments image | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat",
+          setup: editor => {
+            editor.ui.registry.addSplitButton("zoom", {
+              text: "100%",
+              onAction: function(_) {
+                //editor.insertContent("<p>Its Friday!</p>");
+              },
+              onItemAction: function(buttonApi, value) {
+                //editor.insertContent(value);
+              },
+              fetch: function(callback) {
+                var items = [
+                  {
+                    type: "choiceitem",
+                    text: "Fit",
+                    value: ""
+                  },
+                  {
+                    type: "choiceitem",
+                    text: "50%",
+                    value: ""
+                  },
+
+                  {
+                    type: "choiceitem",
+                    text: "75%",
+                    value: ""
+                  },
+                  {
+                    type: "choiceitem",
+                    text: "90%",
+                    value: ""
+                  },
+                  {
+                    type: "choiceitem",
+                    text: "100%",
+                    value: ""
+                  },
+                  {
+                    type: "choiceitem",
+                    text: "125%",
+                    value: ""
+                  },
+                  {
+                    type: "choiceitem",
+                    text: "150%",
+                    value: ""
+                  }
+                ];
+                callback(items);
+              }
+            });
+            editor.ui.registry.addMenuItem("dAddons", {
+              text: "Documents Add-ons",
+              onAction: text => {
+                console.log(text);
+              }
+            });
+            editor.ui.registry.addMenuItem("pDocs", {
+              text: "Panda Docs",
+              onAction: text => {
+                console.log(text);
+              }
+            });
+            editor.ui.registry.addMenuItem("gAddons", {
+              text: "Get Add-ons",
+              onAction: text => {
+                console.log(text);
+              }
+            });
+            editor.ui.registry.addMenuItem("mAddons", {
+              text: "Manage Add-ons",
+              onAction: text => {
+                console.log(text);
+              }
+            });
+          }
         }}
         onEditorChange={this.handleEditorChange}
       />

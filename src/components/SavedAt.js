@@ -24,8 +24,8 @@ const useStyles = makeStyles(theme => ({
     color: "rgba(0, 0, 0, .54)",
     position: "absolute",
     zIndex: 2,
-    top: 38,
-    left: 450,
+    top: 36,
+    left: 470,
     textDecoration: "underline"
   }
 }));
@@ -55,16 +55,6 @@ const SavedAt = () => {
     const yearNow = now.getFullYear();
     const monthNow = now.getMonth();
     const dayNow = now.getDate();
-    console.log({
-      date,
-      now,
-      yearDate,
-      monthDate,
-      dayDate,
-      yearNow,
-      monthNow,
-      dayNow
-    });
     if (yearDate === yearNow && monthDate === monthNow && dayDate === dayNow) {
       return "All changes saved in Drive";
     }

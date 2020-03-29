@@ -22,14 +22,14 @@ img {
 
 .google-docs .tox .tox-edit-area {
   max-width: 840px;
-  margin: 10px auto;
+  margin: 30px auto 10px;
   box-shadow: rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .google-docs .tox.tox-tinymce {
   border: 0;
   position: relative;
-  top: -33px;
+  margin-top: -33px;
 }
 
 .google-docs .tox .tox-menubar {
@@ -48,15 +48,64 @@ img {
   cursor: pointer;
 }
 
-.google-docs .tox .tox-mbtn:hover:not(:disabled):not(.tox-mbtn--active) {
+.google-docs .tox .tox-mbtn:hover:not(:disabled):not(.tox-mbtn--active),
+.google-docs .tox .tox-tbtn:hover {
   background-color: rgb(241, 243, 244);
 }
 .google-docs .tox .tox-mbtn--active,
-.google-docs .tox .tox-mbtn:focus:not(:disabled) {
+.google-docs .tox .tox-mbtn:focus:not(:disabled),
+.google-docs .tox .tox-tbtn--enabled,
+.google-docs .tox .tox-tbtn--enabled:hover {
   background-color: rgb(232, 240, 254);
+}
+
+.google-docs .tox .tox-tbtn:not(.tox-tbtn--disabled) svg {
+  fill: #5f6368;
+}
+
+.google-docs .tox .tox-tbtn.tox-tbtn--enabled svg,
+.google-docs .tox .tox-tbtn.tox-tbtn--enabled:hover svg {
+  fill: #1a73e8;
 }
 
 .google-docs .tox .tox-mbtn__select-label {
   font-weight: 500;
   cursor: pointer;
+}
+
+.google-docs .tox .tox-toolbar.tox-toolbar--scrolling {
+  padding: 5px 20px;
+  border-bottom: 1px solid #ccc;
+  background: none;
+  align-items: center;
+  margin: 0;
+}
+
+.google-docs .tox .tox-tbtn,
+.google-docs .tox .tox-split-button {
+  cursor: pointer;
+  margin: 0 2px;
+}
+
+.google-docs .tox .tox-tbtn:not(.tox-tbtn--select) {
+  height: 24px;
+  width: 24px;
+}
+.google-docs .tox .tox-tbtn.tox-tbtn--select {
+  font-weight: 600;
+  height: auto;
+  padding: 5px;
+}
+
+.google-docs .tox .tox-tbtn--bespoke .tox-tbtn__select-label {
+  width: auto;
+}
+
+.google-docs .tox-edit-area {
+  background-color: #fff;
+}
+
+.google-docs .tox-edit-area iframe {
+  margin: 35px 65px;
+  width: calc(100% - 130px);
 }
